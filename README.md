@@ -11,5 +11,5 @@
 
 ## Anggota Kelompok
 
-- Hanif Nugraha Ramadhan [4.31.20.0.10]
-- M. Rafif Hasani
+- Dionysius Brammetya Yudhistira [4.31.20.1.08]
+- Noviantie Putriastuti [4.31.20.1.17]
