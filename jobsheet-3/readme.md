@@ -1,13 +1,12 @@
 # Jobsheet 3
-Topologi Jaringan Lokal dan Wifi
+TOPOLOGI JARINGAN LOKAL DAN WIFI
 
 ## Anggota Kelompok
-- Hanif Nugraha Ramadhan
-- Muhammad Rafif Hasani
+- Dionysius Brammetya Yudhistira
+- Noviantie Putriastuti
 
-## Hasil Percobaan
-
-A.	ESP32 Wi-Fi Modes dan Wifi-Scan
+## 1. ESP32 Wi-Fi Modes dan Wifi-Scan
+### Program
 <details>
   <summary>Program (click to open)</summary>
 
@@ -49,12 +48,11 @@ void loop() {
 }
 ```
 </details>
- 
- 
-*Serial Monitor*
-![js3.1](https://raw.githubusercontent.com/llaurensius/pratikum-sistemembeded-2223/main/jobsheet-3/js3.1/3.1.jpg)
+  
+![A](https://user-images.githubusercontent.com/121749328/210864242-01245101-090a-4e99-addc-b7eecd0afbda.png)
 
-B. Menghubungkan ESP32 dengan Jaringan WiFi
+## 2. Menghubungkan ESP32 dengan Jaringan WiFi
+### Program
 <details>
   <summary>Program (click to open)</summary>
  
@@ -84,12 +82,11 @@ B. Menghubungkan ESP32 dengan Jaringan WiFi
     }
 ```
 </details>
- 
- 
-*Serial Monitor*
-![js3.2](https://raw.githubusercontent.com/llaurensius/pratikum-sistemembeded-2223/main/jobsheet-3/js3.2/3.2.jpg)
+  
+![B](https://user-images.githubusercontent.com/121749328/210864305-34096d81-b74e-422d-85ed-52023efc7cc6.png)
 
-C.	Menghubungkan Kembali (Re-connect) ESP32 dengan Jaringan Wi-Fi
+## 3.	Menghubungkan Kembali (Re-connect) ESP32 dengan Jaringan Wi-Fi
+### Program
 <details>
   <summary>Program (click to open)</summary>
  
@@ -134,11 +131,11 @@ void loop() {
 }
 ```
 </details>
- 
-*Serial Monitor*
-![js3.3](https://raw.githubusercontent.com/llaurensius/pratikum-sistemembeded-2223/main/jobsheet-3/js3.3/js3.3.jpg)
+  
+![C](https://user-images.githubusercontent.com/121749328/210864363-a0713bc2-f431-4363-b993-6e510bc83c2b.png)
 
-D.	Mengganti Hostname ESP32
+## 4. Mengganti Hostname ESP32
+### Program
 <details>
   <summary>Program (click to open)</summary>
  
@@ -173,10 +170,10 @@ void loop() {
 ```
 </details>
  
-*Hasil*<br /><br />
 ![js3.4](https://raw.githubusercontent.com/llaurensius/pratikum-sistemembeded-2223/main/jobsheet-3/js3.4/js3.4.jpg)
 
-E.	Mengirim Data Sensor ke Database<br /><br />
+## 5. Mengirim Data Sensor ke Database
+### Program
 <details>
   <summary>Program (click to open)</summary>
  
@@ -223,32 +220,30 @@ String readDHTHumidity() {
  return String(h);
  }
 }
-```
-```html
 const char index_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE HTML><html>
 <head>
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
- integrity="sha384-
- fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
- crossorigin="anonymous">
-  <style>
-   html {
-   font-family: Arial;
-   display: inline-block;
-   margin: 0px auto;
-   text-align: center;
-   }
-   h2 { font-size: 3.0rem; }
-   p { font-size: 3.0rem; }
-   .units { font-size: 1.2rem; }
-   .dht-labels{
-   font-size: 1.5rem;
-   vertical-align:middle;
-   padding-bottom: 15px;
-   }
-  </style>
+integrity="sha384-
+fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+crossorigin="anonymous">
+ <style>
+ html {
+ font-family: Arial;
+ display: inline-block;
+ margin: 0px auto;
+ text-align: center;
+ }
+ h2 { font-size: 3.0rem; }
+ p { font-size: 3.0rem; }
+ .units { font-size: 1.2rem; }
+ .dht-labels{
+ font-size: 1.5rem;
+ vertical-align:middle;
+ padding-bottom: 15px;
+ }
+ </style>
 </head>
 <body>
  <h2>ESP32 DHT Server</h2>
@@ -266,7 +261,7 @@ const char index_html[] PROGMEM = R"rawliteral(
  </p>
 </body>
 <script>
- setInterval(function ( ) {
+setInterval(function ( ) {
  var xhttp = new XMLHttpRequest();
  xhttp.onreadystatechange = function() {
  if (this.readyState == 4 && this.status == 200) {
@@ -275,8 +270,8 @@ const char index_html[] PROGMEM = R"rawliteral(
  };
  xhttp.open("GET", "/temperature", true);
  xhttp.send();
- }, 10000 ) ;
- setInterval(function ( ) {
+}, 10000 ) ;
+setInterval(function ( ) {
  var xhttp = new XMLHttpRequest();
  xhttp.onreadystatechange = function() {
  if (this.readyState == 4 && this.status == 200) {
@@ -285,11 +280,9 @@ const char index_html[] PROGMEM = R"rawliteral(
  };
  xhttp.open("GET", "/humidity", true);
  xhttp.send();
- }, 10000 ) ;
+}, 10000 ) ;
 </script>
 </html>)rawliteral";
-```
-```c
 // Replaces placeholder with DHT values
 String processor(const String& var){
  //Serial.println(var);
@@ -332,12 +325,8 @@ void loop(){
 }
 ```
 </details>
- 
-## Analisa
+  
+![E1](https://user-images.githubusercontent.com/121749328/210865823-878d294d-8bd0-4052-8f93-49c99d729fc1.jpg)
 
-A.	ESP32 Wi-Fi Modes dan Wifi-Scan
+![E2](https://user-images.githubusercontent.com/121749328/210865859-61de487d-32d1-4981-9a2b-a2c922c658f9.jpg)
 
-
-## Kesimpulan
-
-## Tugas
